@@ -8,8 +8,9 @@ public class VipDemo {
     VipMuchDetail vipmuch = new VipMuchDetail();
 
     public String charge(int id,double much,double jlmuch) {
-        vipmuch.getMuch(id);
+        //vipmuch.getMuch(id);
         vipmuch.setMuch(much);
         vipmuch.setJlMuch(jlmuch);
+        return "";
     }
 }
