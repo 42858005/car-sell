@@ -26,4 +26,12 @@ public class VipServiceImpl implements VipService {
         return vipMapper.insertSelective(vip);
 
     }
+
+    @Override
+    public int updateVip(Vip vip) {
+        //vip.setCrDate(new Date());
+
+        return vipMapper.updateByPrimaryKeySelective(vip);
+
+    }
 }

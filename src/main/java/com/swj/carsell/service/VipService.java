@@ -4,4 +4,6 @@ import com.swj.carsell.model.Vip;
 
 public interface VipService {
     int addVip(Vip vip);
+    int updateVip(Vip vip);
+
 }
