@@ -32,4 +32,16 @@ public class AdminController {
 
         return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "登录成功", loginAdmin);
     }
+
+    @PostMapping("/updateInfos")
+    public AjaxObj updateInfos(@RequestBody Admin admin){
+
+        int isOk = adminService.updateInfo(admin);
+
+        if (isOk > 0) {
+            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "修改成功");
+        }
+
+        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "修改失败");
+    }
 }

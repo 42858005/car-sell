@@ -5,4 +5,6 @@ import com.swj.carsell.model.Admin;
 public interface AdminService {
 
     Admin login(Admin admin);
+
+    int updateInfo(Admin admin);
 }

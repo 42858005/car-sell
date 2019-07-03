@@ -18,4 +18,9 @@ public class AdminServiceImpl implements AdminService {
         return adminMapper.selectOne(admin);
     }
 
+    @Override
+    public int updateInfo(Admin admin) {
+        return adminMapper.updateByPrimaryKeySelective(admin);
+    }
+
 }
