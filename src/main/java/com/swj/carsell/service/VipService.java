@@ -6,4 +6,5 @@ public interface VipService {
     int addVip(Vip vip);
     int updateVip(Vip vip);
 
+
 }
