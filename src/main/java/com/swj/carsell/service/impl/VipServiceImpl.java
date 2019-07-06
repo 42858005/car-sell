@@ -42,4 +42,9 @@ public class VipServiceImpl implements VipService {
     public List<Vip> selectByVip(Vip vip) {
         return vipMapper.select(vip);
     }
+
+    @Override
+    public int deleteByPrimaryKey(Vip vip) {
+        return vipMapper.deleteByExample(vip);
+    }
 }

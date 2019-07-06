@@ -21,24 +21,22 @@ public class VipController {
     @Autowired
     private VipService vipService;
 
-    @PostMapping("/addVip")
-    public AjaxObj addVip(@RequestBody Vip vip) {
-        int isOk = vipService.addVip(vip);
+    @PostMapping("/aOrU")
+    public AjaxObj aOrU(@RequestBody Vip vip) {
+
+        int isOk = 0;
+        if (vip.getId() == null) {
+            //id为空 说明是新增操作
+            isOk = vipService.addVip(vip);
+        } else {
+            //id不为空则是修改操作，根据id修改
+            isOk = vipService.updateVip(vip);
+        }
 
         if(isOk > 0){
-            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "添加成功");
+            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "请求成功");
         }
-        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "添加失败");
-    }
-
-    @PostMapping("/updateVip")
-    public AjaxObj updateVip(@RequestBody Vip vip) {
-        int isOk = vipService.updateVip(vip);
-
-        if(isOk > 0){
-            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "修改成功");
-        }
-        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "修改失败");
+        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "请求失败");
     }
 
     /**
@@ -53,6 +51,24 @@ public class VipController {
         List<Vip> list = vipService.selectByVip(vip);
 
         return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "请求成功", list);
+    }
+
+
+    @PostMapping("/deleteByVip")
+    public AjaxObj deleteByVip(@RequestBody Vip vip) {
+
+        //主键不能为空，根据主键删除
+        if (vip.getId() == null) {
+            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "参数出错");
+        }
+        //根据主键删除
+        int isOk = vipService.deleteByPrimaryKey(vip);
+
+        if (isOk > 0){
+            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "删除成功");
+        }
+
+        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "删除失败");
     }
 
     
