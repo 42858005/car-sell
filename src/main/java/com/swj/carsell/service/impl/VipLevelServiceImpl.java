@@ -6,6 +6,8 @@ import com.swj.carsell.service.VipLevelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VipLevelServiceImpl implements VipLevelService {
     @Autowired
@@ -22,6 +24,16 @@ public class VipLevelServiceImpl implements VipLevelService {
     public int updateVipLevel(VipLevel vipLevel)
     {
         return vipLevelMapper.updateByPrimaryKeySelective(vipLevel);
+    }
+
+    @Override
+    public List<VipLevel> selectByVipLevel(VipLevel vipLevel) {
+        return vipLevelMapper.select(vipLevel);
+    }
+
+    @Override
+    public int deleteByPrimaryKey(VipLevel vipLevel) {
+        return vipLevelMapper.deleteByPrimaryKey(vipLevel);
     }
 
 }

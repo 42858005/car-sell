@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/vipMuch")
@@ -19,25 +21,51 @@ public class VipMuchDetailController {
     @Autowired
     private VipMuchDetailService vipMuchDetailService;
 
-    @PostMapping("/addVipMuch")
-    public AjaxObj addMuchDetail(@RequestBody VipMuchDetail vipMuchDetail) {
-        int isOk = vipMuchDetailService.addMuchDetail(vipMuchDetail);
+    @PostMapping("/aOrU")
+    public AjaxObj aOrU(@RequestBody VipMuchDetail vipMuchDetail) {
+
+        int isOk = 0;
+        if (vipMuchDetail.getId() == null) {
+            isOk = vipMuchDetailService.addMuchDetail(vipMuchDetail);
+        } else {
+            isOk = vipMuchDetailService.updateMuchDetail(vipMuchDetail);
+        }
 
         if(isOk > 0){
-            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "添加成功");
+            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "请求成功");
         }
-        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "添加失败");
+        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "请求失败");
     }
 
-    @PostMapping("/updateVipMuch")
-    public AjaxObj updateMuchDetail(@RequestBody VipMuchDetail vipMuchDetail) {
-        int isOk = vipMuchDetailService.updateMuchDetail(vipMuchDetail);
+    /**
+     * 根据所传的vipMuchDetail里面的字段值来匹配查询
+     * 若查询所有 vipMuchDetail值不传即可
+     * @param vipMuchDetail
+     * @return
+     */
+    @PostMapping("/selectByMuchDetail")
+    public AjaxObj selectByMuchDetail(@RequestBody VipMuchDetail vipMuchDetail) {
 
-        if(isOk > 0){
-            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "修改成功");
-        }
-        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "修改失败");
+        List<VipMuchDetail> list = vipMuchDetailService.selectByMuchDetail(vipMuchDetail);
+
+        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "请求成功", list);
     }
 
+    @PostMapping("/deleteByMuchDetail")
+    public AjaxObj deleteByMuchDetail(@RequestBody VipMuchDetail vipMuchDetail) {
+
+        //主键不能为空，根据主键删除
+        if (vipMuchDetail.getId() == null) {
+            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "参数出错");
+        }
+        //根据主键删除
+        int isOk = vipMuchDetailService.deleteByPrimaryKey(vipMuchDetail);
+
+        if (isOk > 0){
+            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "删除成功");
+        }
+
+        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "删除失败");
+    }
 
 }

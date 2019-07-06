@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 
 @Service
@@ -34,5 +35,15 @@ public class VipMuchDetailServiceImpl implements VipMuchDetailService {
 
         return vipMuchDetailMapper.updateByPrimaryKeySelective(vipMuchDetail);
 
+    }
+
+    @Override
+    public List<VipMuchDetail> selectByMuchDetail(VipMuchDetail vipMuchDetail) {
+        return vipMuchDetailMapper.select(vipMuchDetail);
+    }
+
+    @Override
+    public int deleteByPrimaryKey(VipMuchDetail vipMuchDetail) {
+        return vipMuchDetailMapper.deleteByPrimaryKey(vipMuchDetail);
     }
 }

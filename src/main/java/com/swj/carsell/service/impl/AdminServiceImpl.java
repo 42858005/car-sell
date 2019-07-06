@@ -6,6 +6,8 @@ import com.swj.carsell.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -21,6 +23,21 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public int updateInfo(Admin admin) {
         return adminMapper.updateByPrimaryKeySelective(admin);
+    }
+
+    @Override
+    public int addAdmin(Admin admin) {
+        return adminMapper.insertSelective(admin);
+    }
+
+    @Override
+    public List<Admin> selectByAdmin(Admin admin) {
+        return adminMapper.select(admin);
+    }
+
+    @Override
+    public int deleteByPrimaryKey(Admin admin) {
+        return adminMapper.deleteByPrimaryKey(admin);
     }
 
 }

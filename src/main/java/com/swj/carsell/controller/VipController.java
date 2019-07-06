@@ -53,7 +53,6 @@ public class VipController {
         return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "请求成功", list);
     }
 
-
     @PostMapping("/deleteByVip")
     public AjaxObj deleteByVip(@RequestBody Vip vip) {
 
@@ -70,8 +69,6 @@ public class VipController {
 
         return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "删除失败");
     }
-
-    
 
 
 }

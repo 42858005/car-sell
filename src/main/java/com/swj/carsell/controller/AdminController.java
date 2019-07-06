@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
@@ -33,15 +34,51 @@ public class AdminController {
         return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "登录成功", loginAdmin);
     }
 
-    @PostMapping("/updateInfos")
+    @PostMapping("/aOrU")
     public AjaxObj updateInfos(@RequestBody Admin admin){
 
-        int isOk = adminService.updateInfo(admin);
-
-        if (isOk > 0) {
-            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "修改成功");
+        int isOk = 0;
+        if (admin.getId() == null) {
+            isOk = adminService.addAdmin(admin);
+        } else {
+            isOk = adminService.updateInfo(admin);
         }
 
-        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "修改失败");
+        if (isOk > 0) {
+            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "请求成功");
+        }
+
+        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "请求失败");
+    }
+
+    /**
+     * 根据所传的admin里面的字段值来匹配查询
+     * 若查询所有 admin值不传即可
+     * @param admin
+     * @return
+     */
+    @PostMapping("/selectByAdmin")
+    public AjaxObj selectByAdmin(@RequestBody Admin admin) {
+
+        List<Admin> list = adminService.selectByAdmin(admin);
+
+        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "请求成功", list);
+    }
+
+    @PostMapping("/deleteByAdmin")
+    public AjaxObj deleteByAdmin(@RequestBody Admin admin) {
+
+        //主键不能为空，根据主键删除
+        if (admin.getId() == null) {
+            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "参数出错");
+        }
+        //根据主键删除
+        int isOk = adminService.deleteByPrimaryKey(admin);
+
+        if (isOk > 0){
+            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "删除成功");
+        }
+
+        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "删除失败");
     }
 }
