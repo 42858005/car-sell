@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @RestController
 @RequestMapping("/vip")
@@ -40,14 +41,18 @@ public class VipController {
         return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "修改失败");
     }
 
-    @PostMapping("/selectAllVip")
-    public AjaxObj selectAllVip() {
-        //int isOk = vipService.addVip(vip);
+    /**
+     * 根据所传的vip里面的字段值来匹配查询
+     * 若查询所有 vip值不传即可
+     * @param vip
+     * @return
+     */
+    @PostMapping("/selectByVip")
+    public AjaxObj selectByVip(@RequestBody Vip vip) {
 
-//        if(isOk > 0){
-//            return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "添加成功");
-//        }
-        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "添加失败");
+        List<Vip> list = vipService.selectByVip(vip);
+
+        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "请求成功", list);
     }
 
     
