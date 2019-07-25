@@ -5,7 +5,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="much" property="much" jdbcType="DOUBLE" />
     <result column="jl_much" property="jlMuch" jdbcType="DOUBLE" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />

@@ -6,7 +6,7 @@ import java.util.Date;
 @Table(name = "vip_much_detail")
 public class VipMuchDetail {
     @Id
-    private Integer id;
+    private String id;
 
     private Double much;
 
@@ -16,17 +16,11 @@ public class VipMuchDetail {
     @Column(name = "update_time")
     private Date updateTime;
 
-    /**
-     * @return id
-     */
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

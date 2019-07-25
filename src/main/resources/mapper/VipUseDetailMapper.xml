@@ -5,7 +5,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="xmid" property="xmid" jdbcType="INTEGER" />
     <result column="much" property="much" jdbcType="DOUBLE" />
     <result column="detail_date" property="detailDate" jdbcType="TIMESTAMP" />

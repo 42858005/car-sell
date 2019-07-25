@@ -21,6 +21,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public Admin selectByPrimaryKey(String id) {
+        return adminMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
     public int updateInfo(Admin admin) {
         return adminMapper.updateByPrimaryKeySelective(admin);
     }

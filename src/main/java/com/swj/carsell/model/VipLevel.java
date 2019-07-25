@@ -5,22 +5,16 @@ import javax.persistence.*;
 @Table(name = "vip_level")
 public class VipLevel {
     @Id
-    private Integer id;
+    private String id;
 
     @Column(name = "vip_name")
     private String vipName;
 
-    /**
-     * @return id
-     */
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

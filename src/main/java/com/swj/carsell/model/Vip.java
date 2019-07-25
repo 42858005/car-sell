@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Vip {
     @Id
-    private Integer id;
+    private String id;
 
     /**
      * 姓名
@@ -39,17 +39,11 @@ public class Vip {
     @Column(name = "open_id")
     private String openId;
 
-    /**
-     * @return id
-     */
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 public class Xm {
     @Id
-    private Integer id;
+    private String id;
 
     @Column(name = "xm_name")
     private String xmName;
@@ -12,17 +12,11 @@ public class Xm {
     @Column(name = "xm_much")
     private Double xmMuch;
 
-    /**
-     * @return id
-     */
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

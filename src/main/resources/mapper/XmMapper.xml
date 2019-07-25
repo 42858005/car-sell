@@ -5,7 +5,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="xm_name" property="xmName" jdbcType="VARCHAR" />
     <result column="xm_much" property="xmMuch" jdbcType="DOUBLE" />
   </resultMap>

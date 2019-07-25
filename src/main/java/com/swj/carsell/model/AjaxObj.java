@@ -17,19 +17,18 @@ public class AjaxObj implements Serializable {
 
 	private int code;
 	private String msg;
-	private String token;
 	private Object data;
-	private Boolean flag;
+	private String flag;
 
 	public AjaxObj() {
 
 	}
 
-	public Boolean getFlag() {
+	public String getFlag() {
 		return flag;
 	}
 
-	public void setFlag(Boolean flag) {
+	public void setFlag(String flag) {
 		this.flag = flag;
 	}
 
@@ -44,7 +43,7 @@ public class AjaxObj implements Serializable {
 		this.data = data;
 	}
 
-	public AjaxObj(int code, String msg, Object data, Boolean flag) {
+	public AjaxObj(int code, String msg, Object data, String flag) {
 		this.code = code;
 		this.msg = msg;
 		this.data = data;
@@ -67,13 +66,6 @@ public class AjaxObj implements Serializable {
 		this.msg = msg;
 	}
 
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
 
 	public Object getData() {
 		return data;

@@ -4,23 +4,17 @@ import javax.persistence.Id;
 
 public class Admin {
     @Id
-    private Integer id;
+    private String id;
 
     private String username;
 
     private String password;
 
-    /**
-     * @return id
-     */
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

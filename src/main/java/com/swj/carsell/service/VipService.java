@@ -13,6 +13,8 @@ public interface VipService {
 
     List<Vip> selectByVip(Vip vip);
 
+    Vip selectByPrimaryKey(String id);
+
     int deleteByPrimaryKey(Vip vip);
 
 }

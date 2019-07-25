@@ -1,14 +1,20 @@
 package com.swj.carsell.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.swj.carsell.annotation.UserLoginToken;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController
+@Controller
 public class HelloWorld {
 
-    @PostMapping("/hello")
-    public String hello() {
-        return "hello";
+    @GetMapping("/vlogin")
+    public String vlogin() {
+        return "viplogin";
     }
- //aaa
+
+    @GetMapping("/vipIndex")
+    @UserLoginToken
+    public String vipIndex() {
+        return "vipindex";
+    }
 }

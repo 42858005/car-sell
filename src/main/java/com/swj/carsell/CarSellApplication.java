@@ -2,6 +2,8 @@ package com.swj.carsell;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication

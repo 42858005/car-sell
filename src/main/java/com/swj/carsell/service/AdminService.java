@@ -8,6 +8,8 @@ public interface AdminService {
 
     Admin login(Admin admin);
 
+    Admin selectByPrimaryKey(String id);
+
     int updateInfo(Admin admin);
 
     int addAdmin(Admin admin);

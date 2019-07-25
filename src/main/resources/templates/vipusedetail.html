@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>丹阳老人头</title>
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/static/css/bootstrap.css}" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link th:href="@{/static/css/sb-admin.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/static/font-awesome/css/font-awesome.min.css}">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" th:href="@{/static/css/morris-0.4.3.min.css}">
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="vipindex.html">丹阳老人头汽车服务后台</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li ><a href="vipindex.html"><i ></i> 首页</a></li>
+            <li ><a href="vipadd.html"><i ></i> 信息添加</a></li>
+            <li ><a href="vipupdate.html"><i ></i> 信息修改</a></li>
+            <li ><a href="vipmuchcharge.html"><i ></i> 充值</a></li>
+            <li ><a href="vipusemuch.html"><i ></i> 消费</a></li>
+            <li class="active"><a href="vipusedetail.html
+              "><i ></i> 消费充值明细查询</a></li>
+            
+            
+              </ul>
+            </li>
+          </ul>
+
+          
+        </div>
+      </nav>
+    <div class="copyrights">Collect from <a href="http://h2design.taobao.com/"  title="网站模板">网站模板</a></div>
+      <div id="page-wrapper">
+
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>消费充值记录查询</h1>
+            <hr style="height:3px;border:none;border-top:2px double red;" />
+          </div>
+          <div class="col-lg-12">
+          <h2>查询信息：</h2>
+            <hr style="height:1px;border:none;border-top:1px dashed #0066CC;" />
+          </div>
+          <div class="col-lg-6">
+
+
+            <form role="form">
+
+              <div class="form-group">
+                <h3>会员编号：</h3>
+                <!-- <label>姓名</label> -->
+                <input class="form-control">
+                
+              </div>
+
+              <div class="form-group">
+                <h3>姓名：</h3>
+                <!-- <label>姓名</label> -->
+                <input class="form-control">
+                
+              </div>
+
+              <div class="form-group">
+                <h3>手机号：</h3>
+                <!-- <label>姓名</label> -->
+                <input class="form-control">
+                
+              </div>
+
+              <div class="form-group">
+                <h3>车牌号：</h3>
+                <!-- <label>姓名</label> -->
+                <input class="form-control">
+                
+              </div>
+
+              <!-- <div class="form-group">
+                <h3>成为会员日期：</h3>
+                
+                <input class="form-control">
+                
+              </div> -->
+
+               <div class="form-group">
+                <h3>会员等级：</h3>
+                <!-- <label>姓名</label> -->
+                <input class="form-control">
+                
+              </div>
+
+              <div class="form-group">
+                <h3>消费日期：</h3>
+                <!-- <label>姓名</label> -->
+                <input class="form-control">
+                
+              </div>
+
+              <div class="form-group">
+                <h3>消费项目：</h3>
+                <!-- <label>姓名</label> -->
+                <input class="form-control">
+                
+              </div>
+
+              <button type="submit" class="btn btn-success btn-lg btn-block">查询</button>
+
+             
+
+
+            </form>
+          </div>
+        </div>
+
+        <hr style="height:1px;border:none;border-top:1px solid #555555;" />
+
+        
+          <div class="col-lg-12">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-money"></i> 
+                全部消费充值记录</h3>
+              </div>
+              <div class="panel-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-hover table-striped tablesorter">
+                    <thead>
+                      <tr>
+                        <th>记录id<i class="fa fa-sort"></i></th>
+                        <th>姓名 <i class="fa fa-sort"></i></th>
+                        <th>手机号 <i class="fa fa-sort"></i></th>
+                        <th>车牌号 <i class="fa fa-sort"></i></th>
+                        <th>消费项目 <i class="fa fa-sort"></i></th>
+                        <th>消费金额 <i class="fa fa-sort"></i></th>
+                        <th>消费日期 <i class="fa fa-sort"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>3326</td>
+                        <td>10/21/2013</td>
+                        <td>3:29 PM</td>
+                        <td>$321.33</td>
+                        <td>3:29 PM</td>
+                        <td>$321.33</td>
+                        <td>$321.33</td>
+                      </tr>
+                      <tr>
+                        <td>3325</td>
+                        <td>10/21/2013</td>
+                        <td>3:20 PM</td>
+                        <td>$234.34</td>
+                        <td>3:29 PM</td>
+                        <td>$321.33</td>
+                        <td>$321.33</td>
+                      </tr>
+                      <tr>
+                        <td>3324</td>
+                        <td>10/21/2013</td>
+                        <td>3:03 PM</td>
+                        <td>$724.17</td>
+                        <td>3:29 PM</td>
+                        <td>$321.33</td>
+                        <td>$321.33</td>
+                      </tr>
+                      <tr>
+                        <td>3323</td>
+                        <td>10/21/2013</td>
+                        <td>3:00 PM</td>
+                        <td>$23.71</td>
+                        <td>3:29 PM</td>
+                        <td>$321.33</td>
+                        <td>$321.33</td>
+                      </tr>
+                      <tr>
+                        <td>3322</td>
+                        <td>10/21/2013</td>
+                        <td>2:49 PM</td>
+                        <td>$8345.23</td>
+                        <td>3:29 PM</td>
+                        <td>$321.33</td>
+                        <td>$321.33</td>
+                      </tr>
+                      <tr>
+                        <td>3321</td>
+                        <td>10/21/2013</td>
+                        <td>2:23 PM</td>
+                        <td>$245.12</td>
+                        <td>3:29 PM</td>
+                        <td>$321.33</td>
+                        <td>$321.33</td>
+                      </tr>
+                      <tr>
+                        <td>3320</td>
+                        <td>10/21/2013</td>
+                        <td>2:15 PM</td>
+                        <td>$5663.54</td>
+                        <td>3:29 PM</td>
+                        <td>$321.33</td>
+                        <td>$321.33</td>
+                      </tr>
+                      <tr>
+                        <td>3319</td>
+                        <td>10/21/2013</td>
+                        <td>2:13 PM</td>
+                        <td>$943.45</td>
+                        <td>3:29 PM</td>
+                        <td>$321.33</td>
+                        <td>$321.33</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- <div class="text-right">
+                  <a href="#">查看全部消费充值记录 <i class="fa fa-arrow-circle-right"></i></a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script th:src="@{/static/js/jquery-1.10.2.js}"></script>
+    <script th:src="@{/static/js/bootstrap.js}"></script>
+
+    <!-- Page Specific Plugins -->    <script th:src="@{/static/js/raphael-min.js}"></script>
+    <script th:src="@{/static/js/morris-0.4.3.min.js}"></script>
+    <script th:src="@{/static/js/morris/chart-data-morris.js}"></script>
+    <script th:src="@{/static/js/tablesorter/jquery.tablesorter.js}"></script>
+    <script th:src="@{/static/js/tablesorter/tables.js}"></script>
+
+  </body>
+</html>

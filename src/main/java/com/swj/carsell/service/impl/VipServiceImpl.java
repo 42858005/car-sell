@@ -20,7 +20,6 @@ public class VipServiceImpl implements VipService {
     @Override
     public int addVip(Vip vip) {
         vip.setCrDate(new Date());
-
         return vipMapper.insertSelective(vip);
 
     }
@@ -28,7 +27,6 @@ public class VipServiceImpl implements VipService {
     @Override
     public int updateVip(Vip vip) {
         //vip.setCrDate(new Date());
-
         return vipMapper.updateByPrimaryKeySelective(vip);
 
     }
@@ -41,6 +39,11 @@ public class VipServiceImpl implements VipService {
     @Override
     public List<Vip> selectByVip(Vip vip) {
         return vipMapper.select(vip);
+    }
+
+    @Override
+    public Vip selectByPrimaryKey(String id) {
+        return vipMapper.selectByPrimaryKey(id);
     }
 
     @Override
