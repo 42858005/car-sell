@@ -1,6 +1,7 @@
 package com.swj.carsell.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
 import java.util.Date;
 
 public class Vip {
@@ -23,6 +24,11 @@ public class Vip {
     @Column(name = "car_number")
     private String carNumber;
 
+    /**
+     * 车型
+     */
+    @Column(name = "car_type")
+    private String carType;
 
     /**
      * 成为会员日期
@@ -39,10 +45,16 @@ public class Vip {
     @Column(name = "open_id")
     private String openId;
 
+    /**
+     * @return id
+     */
     public String getId() {
         return id;
     }
 
+    /**
+     * @param id
+     */
     public void setId(String id) {
         this.id = id;
     }
@@ -83,6 +95,41 @@ public class Vip {
         this.tel = tel;
     }
 
+    /**
+     * 获取车牌号
+     *
+     * @return car_number - 车牌号
+     */
+    public String getCarNumber() {
+        return carNumber;
+    }
+
+    /**
+     * 设置车牌号
+     *
+     * @param carNumber 车牌号
+     */
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
+    }
+
+    /**
+     * 获取车型
+     *
+     * @return car_type - 车型
+     */
+    public String getCarType() {
+        return carType;
+    }
+
+    /**
+     * 设置车型
+     *
+     * @param carType 车型
+     */
+    public void setCarType(String carType) {
+        this.carType = carType;
+    }
 
     /**
      * 获取成为会员日期
@@ -125,14 +172,6 @@ public class Vip {
      */
     public String getOpenId() {
         return openId;
-    }
-
-    public String getCarNumber() {
-        return carNumber;
-    }
-
-    public void setCarNumber(String carNumber) {
-        this.carNumber = carNumber;
     }
 
     /**

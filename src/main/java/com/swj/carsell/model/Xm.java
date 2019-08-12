@@ -1,6 +1,7 @@
 package com.swj.carsell.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
 
 public class Xm {
     @Id
@@ -12,10 +13,16 @@ public class Xm {
     @Column(name = "xm_much")
     private Double xmMuch;
 
+    /**
+     * @return id
+     */
     public String getId() {
         return id;
     }
 
+    /**
+     * @param id
+     */
     public void setId(String id) {
         this.id = id;
     }

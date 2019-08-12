@@ -1,6 +1,8 @@
 package com.swj.carsell.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Table(name = "vip_level")
 public class VipLevel {
@@ -10,10 +12,16 @@ public class VipLevel {
     @Column(name = "vip_name")
     private String vipName;
 
+    /**
+     * @return id
+     */
     public String getId() {
         return id;
     }
 
+    /**
+     * @param id
+     */
     public void setId(String id) {
         this.id = id;
     }
