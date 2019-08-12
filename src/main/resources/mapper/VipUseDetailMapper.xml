@@ -12,6 +12,6 @@
     <result column="remarks" property="remarks" jdbcType="VARCHAR" />
     <result column="kilometer" property="kilometer" jdbcType="DOUBLE" />
     <result column="insurance" property="insurance" jdbcType="TIMESTAMP" />
-    <result column="vip_id" property="vipId" jdbcType="INTEGER" />
+    <result column="vip_id" property="vipId" jdbcType="VARCHAR" />
   </resultMap>
 </mapper>

@@ -1,9 +1,12 @@
 package com.swj.carsell.model;
 
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.util.Date;
 
+@Data
 public class Vip {
     @Id
     private String id;
@@ -37,147 +40,27 @@ public class Vip {
     private Date crDate;
 
     /**
+     * 余额
+     */
+    private Double balance;
+
+    /**
+     * 积分
+     */
+    private Double score;
+
+    /**
+     * 奖励金暂时不用
+     */
+    @Column(name = "reward_balance")
+    private Double rewardBalance;
+
+    /**
      * 会员等级
      */
     @Column(name = "vip_level_id")
-    private Integer vipLevelId;
+    private String vipLevelId;
 
     @Column(name = "open_id")
     private String openId;
-
-    /**
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * 获取姓名
-     *
-     * @return name - 姓名
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * 设置姓名
-     *
-     * @param name 姓名
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * 获取电话
-     *
-     * @return tel - 电话
-     */
-    public String getTel() {
-        return tel;
-    }
-
-    /**
-     * 设置电话
-     *
-     * @param tel 电话
-     */
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
-
-    /**
-     * 获取车牌号
-     *
-     * @return car_number - 车牌号
-     */
-    public String getCarNumber() {
-        return carNumber;
-    }
-
-    /**
-     * 设置车牌号
-     *
-     * @param carNumber 车牌号
-     */
-    public void setCarNumber(String carNumber) {
-        this.carNumber = carNumber;
-    }
-
-    /**
-     * 获取车型
-     *
-     * @return car_type - 车型
-     */
-    public String getCarType() {
-        return carType;
-    }
-
-    /**
-     * 设置车型
-     *
-     * @param carType 车型
-     */
-    public void setCarType(String carType) {
-        this.carType = carType;
-    }
-
-    /**
-     * 获取成为会员日期
-     *
-     * @return cr_date - 成为会员日期
-     */
-    public Date getCrDate() {
-        return crDate;
-    }
-
-    /**
-     * 设置成为会员日期
-     *
-     * @param crDate 成为会员日期
-     */
-    public void setCrDate(Date crDate) {
-        this.crDate = crDate;
-    }
-
-    /**
-     * 获取会员等级
-     *
-     * @return vip_level_id - 会员等级
-     */
-    public Integer getVipLevelId() {
-        return vipLevelId;
-    }
-
-    /**
-     * 设置会员等级
-     *
-     * @param vipLevelId 会员等级
-     */
-    public void setVipLevelId(Integer vipLevelId) {
-        this.vipLevelId = vipLevelId;
-    }
-
-    /**
-     * @return open_id
-     */
-    public String getOpenId() {
-        return openId;
-    }
-
-    /**
-     * @param openId
-     */
-    public void setOpenId(String openId) {
-        this.openId = openId;
-    }
 }

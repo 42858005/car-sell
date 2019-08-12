@@ -6,13 +6,16 @@ import com.swj.carsell.model.Xm;
 import com.swj.carsell.service.VipUseDetailService;
 import com.swj.carsell.service.XmService;
 import com.swj.carsell.utils.ReturnValCode;
+import com.swj.carsell.vo.VipConsumeVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -68,5 +71,14 @@ public class VipUseDetailController {
         }
 
         return new AjaxObj(ReturnValCode.RTN_VAL_CODE_FAIL, "删除失败");
+    }
+
+    @PostMapping("/selectConsumeDetail")
+    public AjaxObj selectConsumeDetail(@RequestBody VipUseDetail vipUseDetail, int currentPage, int pageSize) {
+
+        Map<String, Object> map  = vipUseDetailService.selectConsumeDetail(vipUseDetail, currentPage, pageSize);
+
+
+        return new AjaxObj(ReturnValCode.RTN_VAL_CODE_SUCCESS, "请求成功", map);
     }
 }

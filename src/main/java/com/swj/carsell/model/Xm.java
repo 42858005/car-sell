@@ -1,8 +1,11 @@
 package com.swj.carsell.model;
 
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 
+@Data
 public class Xm {
     @Id
     private String id;
@@ -12,46 +15,4 @@ public class Xm {
 
     @Column(name = "xm_much")
     private Double xmMuch;
-
-    /**
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * @return xm_name
-     */
-    public String getXmName() {
-        return xmName;
-    }
-
-    /**
-     * @param xmName
-     */
-    public void setXmName(String xmName) {
-        this.xmName = xmName;
-    }
-
-    /**
-     * @return xm_much
-     */
-    public Double getXmMuch() {
-        return xmMuch;
-    }
-
-    /**
-     * @param xmMuch
-     */
-    public void setXmMuch(Double xmMuch) {
-        this.xmMuch = xmMuch;
-    }
 }
