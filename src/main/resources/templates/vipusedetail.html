@@ -173,7 +173,7 @@
               </div>
               <div class="panel-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped tablesorter">
+                    <table id="example" class="table table-bordered table-hover table-striped tablesorter">
                         <thead>
                         <tr>
                             <th>记录id<i class="fa fa-sort"></i></th>
@@ -361,6 +361,14 @@
     <script th:src="@{/static/js/morris/chart-data-morris.js}"></script>
     <script th:src="@{/static/js/tablesorter/jquery.tablesorter.js}"></script>
     <script th:src="@{/static/js/tablesorter/tables.js}"></script>
+    <script th:src="@{/static/js/jquery.dataTables.min.js}"></script>
+    <script th:src="@{/static/js/dataTables.bootstrap.js}"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            $('#example').dataTable();
+        } );
+    </script>
 
   </body>
 </html>
