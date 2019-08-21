@@ -45,12 +45,11 @@
         <script th:src="@{/static/assets/js/supersized.3.2.7.min.js}" ></script>
         <script th:src="@{/static/assets/js/supersized-init.js}" ></script>
         <script th:src="@{/static/assets/js/scripts.js}" ></script>
-
+        <script th:src="@{/static/js/common.js}"></script>
 
         <script type="text/javascript">
             $(function(){
                 $("#loginButton").click(function(){
-
                     $.ajax({
                         //请求方式
                         type : "POST",
@@ -60,7 +59,7 @@
                             "token":localStorage.getItem("tk")//此处放置请求到的用户token
                         },
                         //请求地址
-                        url : "http://127.0.0.1:8080/car-sell/admin/login",
+                        url : myUri + "/car-sell/admin/login",
                         //数据，json字符串
                         data : JSON.stringify({
                             "username" : $(".username").val(),

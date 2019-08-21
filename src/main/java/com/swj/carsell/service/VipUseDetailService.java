@@ -13,7 +13,10 @@ public interface VipUseDetailService {
 
     List<VipUseDetail> selectByUseDetail(VipUseDetail vipUseDetail);
 
-    Map<String, Object> selectConsumeDetail(VipUseDetail vipUseDetail, int currentPage, int pageSize);
+    List<VipConsumeVo> selectConsumeDetail();
 
     int deleteByPrimaryKey(VipUseDetail vipUseDetail);
+
+    /**查询首页消费记录(前20条)*/
+    List<VipConsumeVo> selectFromIndex();
 }

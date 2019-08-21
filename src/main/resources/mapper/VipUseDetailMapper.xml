@@ -6,7 +6,7 @@
       WARNING - @mbg.generated
     -->
     <id column="id" property="id" jdbcType="VARCHAR" />
-    <result column="xmid" property="xmid" jdbcType="INTEGER" />
+    <result column="xm_id" property="xmId" jdbcType="VARCHAR" />
     <result column="much" property="much" jdbcType="DOUBLE" />
     <result column="detail_date" property="detailDate" jdbcType="TIMESTAMP" />
     <result column="remarks" property="remarks" jdbcType="VARCHAR" />
@@ -14,4 +14,9 @@
     <result column="insurance" property="insurance" jdbcType="TIMESTAMP" />
     <result column="vip_id" property="vipId" jdbcType="VARCHAR" />
   </resultMap>
+  
+  <select id="selectFromIndex" resultMap="BaseResultMap">
+    select * from vip_use_detail order by detail_date desc limit 0,20
+  </select>
+  
 </mapper>

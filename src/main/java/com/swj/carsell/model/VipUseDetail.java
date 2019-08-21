@@ -16,7 +16,7 @@ public class VipUseDetail {
     /**
      * 项目
      */
-    private Integer xmid;
+    private String xmId;
 
     /**
      * 消费金额

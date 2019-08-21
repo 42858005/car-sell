@@ -9,6 +9,8 @@ public interface XmService {
 
     int updateXm (Xm xm);
 
+    Xm selectByPrimaryKey(String id);
+
     List<Xm> selectByXm(Xm xm);
 
     int deleteByPrimaryKey(Xm xm);

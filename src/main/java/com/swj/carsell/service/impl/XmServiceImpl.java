@@ -3,6 +3,7 @@ package com.swj.carsell.service.impl;
 import com.swj.carsell.mapper.XmMapper;
 import com.swj.carsell.model.Xm;
 import com.swj.carsell.service.XmService;
+import com.swj.carsell.utils.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,7 @@ public class XmServiceImpl implements XmService {
     @Override
     public int addXm(Xm xm) {
         //vip.setCrDate(new Date());
-
+        xm.setId(CommonUtil.getUUID());
         return xmMapper.insertSelective(xm);
 
     }
@@ -29,6 +30,11 @@ public class XmServiceImpl implements XmService {
 
         return xmMapper.updateByPrimaryKeySelective(xm);
 
+    }
+
+    @Override
+    public Xm selectByPrimaryKey(String id) {
+        return xmMapper.selectByPrimaryKey(id);
     }
 
     @Override

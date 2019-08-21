@@ -17,14 +17,20 @@ public class SetFeildValueAspect {
     private BeanUtil beanUtil;
 
     @Around("@annotation(com.swj.carsell.annotation.NeedSetFeildValue)")
-    public Object doSetFeildValue(ProceedingJoinPoint pjp) throws  Throwable{
-        Object ret = pjp.proceed();
-        if(ret instanceof Collection){
-            this.beanUtil.setFieldValueForCollection((Collection) ret);
-        }else{
-            //不是集合，也需要設置屬性值，，beanUtil还提供一个设置单个对象的属性值方法
-            this.beanUtil.setFieldValueForOneObj(ret);
+    public Object doSetFeildValue(ProceedingJoinPoint pjp){
+        Object ret = null;
+        try {
+            ret = pjp.proceed();
+            if(ret instanceof Collection){
+                this.beanUtil.setFieldValueForCollection((Collection) ret);
+            }else{
+                //不是集合，也需要設置屬性值，，beanUtil还提供一个设置单个对象的属性值方法
+                this.beanUtil.setFieldValueForOneObj(ret);
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
         }
+
         return ret;
 
     }

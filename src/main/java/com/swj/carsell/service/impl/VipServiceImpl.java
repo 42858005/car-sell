@@ -3,6 +3,7 @@ package com.swj.carsell.service.impl;
 import com.swj.carsell.mapper.VipMapper;
 import com.swj.carsell.model.Vip;
 import com.swj.carsell.service.VipService;
+import com.swj.carsell.utils.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ public class VipServiceImpl implements VipService {
     @Override
     public int addVip(Vip vip) {
         vip.setCrDate(new Date());
+        vip.setId(CommonUtil.getUUID());
         return vipMapper.insertSelective(vip);
 
     }

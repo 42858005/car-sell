@@ -3,6 +3,7 @@ package com.swj.carsell.service.impl;
 import com.swj.carsell.mapper.AdminMapper;
 import com.swj.carsell.model.Admin;
 import com.swj.carsell.service.AdminService;
+import com.swj.carsell.utils.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +33,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public int addAdmin(Admin admin) {
+        admin.setId(CommonUtil.getUUID());
         return adminMapper.insertSelective(admin);
     }
 

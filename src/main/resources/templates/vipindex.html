@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress ALL-->
 <html lang="en" xmlns:th="http://www.thymeleaf.org" >
   <head>
     <meta charset="utf-8">
@@ -21,7 +22,6 @@
   <body>
 
     <div id="wrapper">
-
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,32 +34,19 @@
           </button>
           <a class="navbar-brand" href="vipindex.html">丹阳老人头汽车服务后台</a>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li class="active"><a href="vipindex.html"><i ></i> 首页</a></li>
-            <li><a href="vipadd.html"><i ></i> 信息添加</a></li>
-            <li><a href="vipupdate.html"><i ></i> 信息修改</a></li>
-            <li><a href="vipmuchcharge.html"><i ></i> 充值</a></li>
-            <li><a href="vipusemuch.html"><i ></i> 消费</a></li>
-            <li><a href="vipusedetail.html
-              "><i ></i> 消费充值明细查询</a></li>
-            
-            
-              </ul>
-            </li>
+            <li class="active"><a href="/car-sell/vipIndex"><i ></i> 首页</a></li>
+            <li><a href="/car-sell/vipUse/selectConsumeDetail"><i ></i> 信息添加</a></li>
+            <li><a href="/car-sell/vipUse/selectConsumeDetail"><i ></i> 信息修改</a></li>
+            <li><a href="/car-sell/vipUse/selectConsumeDetail"><i ></i> 充值</a></li>
+            <li><a href="/car-sell/vipUse/selectConsumeDetail"><i ></i> 消费</a></li>
+            <li><a href="/car-sell/vipUse/selectConsumeDetail" ><i ></i> 消费充值明细查询</a></li>
           </ul>
-
-          
         </div><!-- /.navbar-collapse -->
       </nav>
     <div class="copyrights">Collect from <a href="http://h2design.taobao.com/"  title="网站模板">网站模板</a></div>
       <div id="page-wrapper">
-
-
-
-
           <div class="col-lg-12">
             <div class="panel panel-primary">
               <div class="panel-heading">
@@ -71,7 +58,7 @@
                     <table class="table table-bordered table-hover table-striped tablesorter">
                         <thead>
                         <tr>
-                            <th>记录id<i class="fa fa-sort"></i></th>
+                            <th>序号<i class="fa fa-sort"></i></th>
                             <th>姓名 <i class="fa fa-sort"></i></th>
                             <th>手机号 <i class="fa fa-sort"></i></th>
                             <th>车牌号 <i class="fa fa-sort"></i></th>
@@ -88,150 +75,22 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>张三</td>
-                            <td>18052766666</td>
-                            <td>苏LBP888</td>
-                            <td>宝马X6</td>
-                            <td>洗车</td>
-                            <td>30</td>
-                            <td>2019-7-2</td>
-                            <td>精洗</td>
-                            <td>2970</td>
-                            <td>30</td>
-                            <td>3030</td>
-                            <td>30000</td>
-                            <td>2020-7-2</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>张三</td>
-                            <td>18052766666</td>
-                            <td>苏LBP888</td>
-                            <td>宝马X6</td>
-                            <td>洗车</td>
-                            <td>30</td>
-                            <td>2019-7-2</td>
-                            <td>精洗</td>
-                            <td>2970</td>
-                            <td>30</td>
-                            <td>3030</td>
-                            <td>30000</td>
-                            <td>2020-7-2</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>张三</td>
-                            <td>18052766666</td>
-                            <td>苏LBP888</td>
-                            <td>宝马X6</td>
-                            <td>洗车</td>
-                            <td>30</td>
-                            <td>2019-7-2</td>
-                            <td>精洗</td>
-                            <td>2970</td>
-                            <td>30</td>
-                            <td>3030</td>
-                            <td>30000</td>
-                            <td>2020-7-2</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>张三</td>
-                            <td>18052766666</td>
-                            <td>苏LBP888</td>
-                            <td>宝马X6</td>
-                            <td>洗车</td>
-                            <td>30</td>
-                            <td>2019-7-2</td>
-                            <td>精洗</td>
-                            <td>2970</td>
-                            <td>30</td>
-                            <td>3030</td>
-                            <td>30000</td>
-                            <td>2020-7-2</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>张三</td>
-                            <td>18052766666</td>
-                            <td>苏LBP888</td>
-                            <td>宝马X6</td>
-                            <td>洗车</td>
-                            <td>30</td>
-                            <td>2019-7-2</td>
-                            <td>精洗</td>
-                            <td>2970</td>
-                            <td>30</td>
-                            <td>3030</td>
-                            <td>30000</td>
-                            <td>2020-7-2</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>张三</td>
-                            <td>18052766666</td>
-                            <td>苏LBP888</td>
-                            <td>宝马X6</td>
-                            <td>洗车</td>
-                            <td>30</td>
-                            <td>2019-7-2</td>
-                            <td>精洗</td>
-                            <td>2970</td>
-                            <td>30</td>
-                            <td>3030</td>
-                            <td>30000</td>
-                            <td>2020-7-2</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>张三</td>
-                            <td>18052766666</td>
-                            <td>苏LBP888</td>
-                            <td>宝马X6</td>
-                            <td>洗车</td>
-                            <td>30</td>
-                            <td>2019-7-2</td>
-                            <td>精洗</td>
-                            <td>2970</td>
-                            <td>30</td>
-                            <td>3030</td>
-                            <td>30000</td>
-                            <td>2020-7-2</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>张三</td>
-                            <td>18052766666</td>
-                            <td>苏LBP888</td>
-                            <td>宝马X6</td>
-                            <td>洗车</td>
-                            <td>30</td>
-                            <td>2019-7-2</td>
-                            <td>精洗</td>
-                            <td>2970</td>
-                            <td>30</td>
-                            <td>3030</td>
-                            <td>30000</td>
-                            <td>2020-7-2</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>张三</td>
-                            <td>18052766666</td>
-                            <td>苏LBP888</td>
-                            <td>宝马X6</td>
-                            <td>充值</td>
-                            <td>3000</td>
-                            <td>2019-7-2</td>
-                            <td></td>
-                            <td>3030</td>
-                            <td>0</td>
-                            <td>38888</td>
-                            <td>30000</td>
-                            <td>2020-7-2</td>
-                        </tr>
+                            <tr th:each="info,infoStat:${list}">
+                                <td th:text="${infoStat.count}"></td>
+                                <td th:text="${info.name}"></td>
+                                <td th:text="${info.tel}"></td>
+                                <td th:text="${info.carNumber}"></td>
+                                <td th:text="${info.carType}"></td>
+                                <td th:text="${info.xmName}"></td>
+                                <td th:text="${info.much}"></td>
+                                <td th:text="${info.detailDate}"></td>
+                                <td th:text="${info.remarks}"></td>
+                                <td th:text="${info.balance}"></td>
+                                <td th:text="${info.xmId} == 100 ? '':${info.much}"></td>
+                                <td th:text="${info.score}"></td>
+                                <td th:text="${info.kilometer}"></td>
+                                <td th:text="${#dates.format(info.insurance, 'yyyy-MM-dd')}"></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -256,6 +115,12 @@
     <script th:src="@{/static/js/morris/chart-data-morris.js}"></script>
     <script th:src="@{/static/js/tablesorter/jquery.tablesorter.js}"></script>
     <script th:src="@{/static/js/tablesorter/tables.js}"></script>
+    <script th:src="@{/static/js/common.js}"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+        });
+    </script>
 
   </body>
 </html>
