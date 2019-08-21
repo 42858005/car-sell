@@ -56,7 +56,9 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             if (userLoginToken.required()) {
                 // 执行认证
                 if (token == null) {
-                    throw new RuntimeException("无token，请重新登录");
+                    httpServletResponse.sendRedirect("/car-sell/vlogin");
+                    return false;
+                    //throw new RuntimeException("无token，请重新登录");
                 }
                 // 获取 token 中的 user id
                 String adminId;
@@ -67,7 +69,9 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 }
                 Admin admin = adminService.selectByPrimaryKey(adminId);
                 if (admin == null) {
-                    throw new RuntimeException("用户不存在，请重新登录");
+                    httpServletResponse.sendRedirect("/car-sell/vlogin");
+                    return false;
+                    //throw new RuntimeException("用户不存在，请重新登录");
                 }
                 // 验证 token
                 JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(admin.getPassword())).build();
