@@ -20,7 +20,6 @@ public class VipServiceImpl implements VipService {
 
     @Override
     public int addVip(Vip vip) {
-        vip.setCrDate(new Date());
         vip.setId(CommonUtil.getUUID());
         return vipMapper.insertSelective(vip);
 

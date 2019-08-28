@@ -1,6 +1,13 @@
 var myUri = "http://192.168.1.155:8080";
 
-
+function getToast(msg,statu) {
+    $.toast({
+        text: msg,
+        heading: '提示',
+        icon: statu,
+        position: 'top-center'
+    });
+}
     // $.ajax({
     //     //请求方式
     //     type : "POST",
